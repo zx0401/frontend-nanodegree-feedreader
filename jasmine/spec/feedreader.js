@@ -60,8 +60,11 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+
+        var body = $('body');
+
         it('is hidden by default', function() {
-            expect($('.menu-hidden').is(':visible')).toBe(true);
+            expect(body.hasClass('menu-hidden')).toBe(true);
         });
 
 
@@ -76,11 +79,11 @@ $(function() {
 
             // First time click, should show the menu (menu-hidden class is removed from html).
             menuIcon.click();
-            expect($('.menu-hidden').is(':visible')).toBe(false);
+            expect(body.hasClass('menu-hidden')).toBe(false);
 
             // Second time click, should hide the menu (menu-hidden class is added again).
             menuIcon.click();
-            expect($('.menu-hidden').is(':visible')).toBe(true);
+            expect(body.hasClass('menu-hidden')).toBe(true);
         });
     });
 
